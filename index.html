@@ -189,6 +189,7 @@ nav.links a.cta{background:var(--lime);color:var(--navy);font-weight:700}
   .hero h1{font-size:clamp(2.4rem,8vw,3.2rem)}
   .hero-lockup{flex-wrap:wrap;padding:12px 16px}
   .hero-lockup svg{width:56px;height:56px}
+  [data-animate]{opacity:1!important;transform:none!important;transition:none!important}
 }
 @media (max-width:375px){
   .hero .btns{flex-direction:column;align-items:flex-start}
@@ -534,7 +535,7 @@ a.ex .ba{color:var(--gold-soft)}
 </div></footer>
 
 <script>
-(function(){var ob=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){var el=en.target,d=parseInt(el.getAttribute('data-delay')||'0',10);setTimeout(function(){el.classList.add('is-visible')},d);ob.unobserve(el)}})},{threshold:.12});document.querySelectorAll('[data-animate]').forEach(function(el){ob.observe(el)});})();
+(function(){var ob=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){var el=en.target,d=parseInt(el.getAttribute('data-delay')||'0',10);setTimeout(function(){el.classList.add('is-visible')},d);ob.unobserve(el)}})},{threshold:0,rootMargin:"0px 0px -10px 0px"});document.querySelectorAll('[data-animate]').forEach(function(el){ob.observe(el)});})();
 document.querySelectorAll('#nav a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('nav').classList.remove('open')})});
 </script>
 </body>

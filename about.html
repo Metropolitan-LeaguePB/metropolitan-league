@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
-:root{--navy:#15233F;--navy-2:#1C3056;--navy-deep:#0B1426;--gold:#B58A3C;--gold-soft:#D8B262;--cream:#F4F1E8;--mut:#6F7488;--line:#E2DCCB;--bk:#B5562F;--qn:#1E8A7A;--disp:'Space Grotesk',sans-serif;--num:'Anton',sans-serif;--body:'Hanken Grotesk',sans-serif;--mono:'Space Mono',monospace;--maxw:1120px}
+:root{--navy:#15233F;--navy-2:#1C3056;--navy-deep:#0C152B;--gold:#B58A3C;--gold-soft:#D8B262;--cream:#F4F1E8;--paper-2:#ECE7D8;--surface:#fff;--ink:#15233F;--mut:#6F7488;--line:#E2DCCB;--mn:#C2922F;--bk:#B5562F;--qn:#1E8A7A;--bx:#B23A48;--si:#2F7D5B;--disp:'Space Grotesk',sans-serif;--num:'Anton',sans-serif;--body:'Hanken Grotesk',sans-serif;--mono:'Space Mono',monospace;--maxw:1080px}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:64px}
 body{margin:0;background:var(--cream);color:var(--navy);font-family:var(--body);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:var(--gold);text-decoration:none}
@@ -20,13 +20,13 @@ a{color:var(--gold);text-decoration:none}
 .logo{display:flex;align-items:center;gap:10px}.logo svg{width:30px;height:30px}.logo b{font-family:var(--disp);font-weight:700;color:var(--cream);font-size:.98rem}
 nav.links{display:flex;gap:4px;margin-left:auto;align-items:center}
 nav.links a{font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:#aeb6c9;padding:8px 11px;border-radius:30px}
-nav.links a:hover,nav.links a.active{color:var(--gold-soft)}
+nav.links a:hover,nav.links a.active{color:var(--gold)}
 nav.links a.cta{background:var(--gold);color:var(--navy);font-weight:700}
 .menu-btn{display:none;margin-left:auto;background:none;border:1px solid rgba(255,255,255,.25);border-radius:8px;color:#cfd6e2;width:38px;height:34px;font-size:1.1rem;cursor:pointer}
 .pagehero{background:linear-gradient(150deg,#1C3056,#0B1426);color:var(--cream);padding:60px 0 52px;position:relative;overflow:hidden}
 .pagehero::before{content:"";position:absolute;inset:0;opacity:.06;background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(circle at 86% 24%,#000,transparent 70%)}
 .pagehero .wrap{position:relative;z-index:2}
-.crumb{font-family:var(--mono);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft)}
+.crumb{font-family:var(--mono);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
 .pagehero h1{font-family:var(--disp);font-weight:700;font-size:clamp(2.2rem,5.4vw,3.6rem);letter-spacing:-.03em;text-transform:uppercase;margin:14px 0 0;line-height:1}
 .pagehero p{color:#dfe6f3;max-width:58ch;margin:16px 0 0;font-size:1.12rem}
 .pagehero .wm{position:absolute;right:-46px;top:50%;transform:translateY(-50%);width:300px;opacity:.08;pointer-events:none}
@@ -59,13 +59,13 @@ nav.links a.cta{background:var(--gold);color:var(--navy);font-weight:700}
 .cinfo{background:var(--navy);color:var(--cream);border-radius:16px;padding:26px;margin-top:18px}
 .cinfo .r{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:.96rem}
 .cinfo .r:last-child{border-bottom:none}
-.cinfo .k{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-soft);width:96px;flex-shrink:0}
-.cinfo .v a{color:var(--gold-soft)}
+.cinfo .k{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);width:96px;flex-shrink:0}
+.cinfo .v a{color:var(--gold)}
 .foot{background:#070d1a;color:#8b93a8;padding:36px 0 46px;border-top:1px solid rgba(255,255,255,.08)}
 .foot .wrap{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center}
 .foot b{font-family:var(--disp);color:var(--cream);font-size:1.02rem}
 .foot .p{font-family:var(--mono);font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;text-align:right}
-.foot a{color:var(--gold-soft)}
+.foot a{color:var(--gold)}
 @media(max-width:880px){nav.links{display:none;position:absolute;top:62px;left:0;right:0;background:#0B1426;flex-direction:column;padding:10px;border-bottom:1px solid rgba(181,138,60,.2)}nav.links.open{display:flex}.menu-btn{display:block}.grid3,.grid2,.clublist{grid-template-columns:1fr}}
 </style>
 </head>

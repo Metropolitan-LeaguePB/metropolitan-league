@@ -8,22 +8,22 @@
 <meta name="description" content="New York City's first competitive inter-borough pickleball league. Five boroughs. One city.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@600;700;800;900&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --navy:#15233F;--navy-2:#1C3056;--navy-deep:#0B1426;--gold:#B58A3C;--gold-soft:#D8B262;--cream:#F4F1E8;--paper-2:#ECE7D8;
+  --navy:#15233F;--navy-2:#1C3056;--navy-deep:#0C152B;--gold:#B58A3C;--gold-soft:#D8B262;--cream:#F4F1E8;--paper-2:#ECE7D8;
   --lime:#D8B262;--lime-deep:#B58A3C;
   --mn:#C2922F;--bk:#B5562F;--qn:#1E8A7A;--bx:#B23A48;--si:#2F7D5B;
   --ink:#15233F;--mut:#6F7488;--line:#E2DCCB;
   --disp:'Space Grotesk',sans-serif;--num:'Anton',sans-serif;--body:'Hanken Grotesk',sans-serif;--mono:'Space Mono',monospace;
-  --maxw:1120px;
+  --maxw:1080px;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:62px}
 body{margin:0;background:var(--navy-deep);color:var(--cream);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-a{color:var(--lime);text-decoration:none}
+a{color:var(--gold);text-decoration:none}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-.eyb{font-family:var(--mono);font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--lime);font-weight:700}
+.eyb{font-family:var(--mono);font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-weight:700}
 .h2{font-family:var(--disp);font-weight:700;font-size:clamp(2rem,5.2vw,3.4rem);letter-spacing:-.03em;text-transform:uppercase;line-height:.98;margin:12px 0 14px}
 .section{padding:84px 0;position:relative}
 
@@ -35,7 +35,7 @@ header.bar{position:sticky;top:0;z-index:70;background:rgba(11,20,38,.9);backdro
 .logo b{font-family:var(--disp);font-weight:700;color:var(--cream);font-size:.98rem;letter-spacing:-.01em}
 nav.links{display:flex;gap:4px;margin-left:auto;align-items:center}
 nav.links a{font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:#aeb6c9;padding:8px 11px;border-radius:30px}
-nav.links a:hover{color:var(--lime)}
+nav.links a:hover{color:var(--gold)}
 nav.links a.cta{background:var(--lime);color:var(--navy);font-weight:700}
 .menu-btn{display:none;margin-left:auto;background:none;border:1px solid rgba(255,255,255,.25);border-radius:8px;color:#cfd6e2;width:38px;height:34px;font-size:1.1rem;cursor:pointer}
 
@@ -44,7 +44,7 @@ nav.links a.cta{background:var(--lime);color:var(--navy);font-weight:700}
 .court-bg{position:absolute;right:-6%;top:50%;transform:translateY(-50%) rotate(-13deg);width:min(760px,86vw);opacity:.85;pointer-events:none}
 .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(700px 480px at 18% 40%,rgba(11,20,38,.4),transparent 70%);pointer-events:none}
 .hero .wrap{position:relative;z-index:3}
-.hero .ey{font-family:var(--mono);font-size:.74rem;letter-spacing:.28em;text-transform:uppercase;color:var(--lime)}
+.hero .ey{font-family:var(--mono);font-size:.74rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
 .hero h1{font-family:var(--disp);font-weight:700;font-size:clamp(3rem,10vw,7rem);line-height:.86;letter-spacing:-.04em;text-transform:uppercase;margin:16px 0 0;max-width:14ch}
 .hero h1 em{font-style:normal;color:var(--lime)}
 .hero .sub{font-size:1.3rem;color:#dfe6f3;max-width:40ch;margin:22px 0 0;font-weight:500}
@@ -182,7 +182,7 @@ nav.links a.cta{background:var(--lime);color:var(--navy);font-weight:700}
 
 /* ===== v3: photos, lime, logo presence ===== */
 .eyb{display:inline-flex;align-items:center;gap:10px}
-.eyb::before{content:"";width:22px;height:3px;background:var(--lime);display:inline-block;flex-shrink:0}
+.eyb::before{content:"";width:22px;height:3px;background:var(--gold);display:inline-block;flex-shrink:0}
 .light .eyb::before,.comm .eyb::before{background:var(--gold)}
 .hero{background-size:cover;background-position:center right}
 .hero-watermark{position:absolute;right:-70px;top:50%;transform:translateY(-50%);width:min(560px,72vw);opacity:.10;z-index:1;pointer-events:none}

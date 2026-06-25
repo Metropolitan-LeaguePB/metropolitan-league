@@ -85,7 +85,8 @@ nav.links a.cta{background:var(--lime);color:var(--navy);font-weight:700}
 .board .bhead{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--lime)}
 .board .grid{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:18px;margin-top:22px}
 .tm{display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center}
-.tm .chip{width:96px;height:96px;border-radius:18px;display:flex;align-items:center;justify-content:center}
+.tm .chip{width:96px;height:96px;border-radius:18px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.tm .chip img{max-width:80%;max-height:80%;width:auto;height:auto;display:block;object-fit:contain}
 .tm .nm{font-family:var(--disp);font-weight:700;font-size:1.1rem}
 .tm .res{font-family:var(--num);font-size:4.4rem;line-height:.8}
 .tm .res.win{color:var(--lime)} .tm .res.lose{color:#5a6a86}
@@ -340,7 +341,7 @@ a.ex .ba{color:var(--gold-soft)}
   <div class="board" data-animate="fade-up">
     <div class="bhead"><span>★ Inaugural Match · June 5, 2026</span><span>Hell's Kitchen Pickleball Club</span></div>
     <div class="grid">
-      <div class="tm"><div class="chip" style="background:#0A0A0A"><img src="images/All_Blacks-Logo.png" alt="HKPC All Blacks" loading="lazy" style="max-width:80%;display:block;filter:invert(1)"></div><div class="nm">HKPC All Blacks</div><div class="res win">W</div><div class="tag w">Winner · Hell's Kitchen</div></div>
+      <div class="tm"><div class="chip" style="background:#0A0A0A"><img src="images/All_Blacks-Logo.png" alt="HKPC All Blacks" loading="lazy" style="max-width:80%;max-height:76px;width:auto;height:auto;display:block;filter:invert(1)"></div><div class="nm">HKPC All Blacks</div><div class="res win">W</div><div class="tag w">Winner · Hell's Kitchen</div></div>
       <div class="vs">VS</div>
       <div class="tm"><div class="chip" style="background:#000000"><img src="images/rhpc-logo.png" alt="RHPC Hookers" loading="lazy" style="max-width:90%;display:block"></div><div class="nm">RHPC Hookers</div><div class="res lose">L</div><div class="tag">Red Hook</div></div>
     </div>
@@ -366,15 +367,15 @@ a.ex .ba{color:var(--gold-soft)}
         <tr><td class="tname">HKPC All Blacks</td><td>Manhattan</td><td>1</td><td>1</td><td>0</td></tr>
         <tr><td class="tname">Conquer</td><td>Manhattan</td><td>0</td><td>0</td><td>0</td></tr>
         <tr><td class="tname">RHPC Hookers</td><td>Brooklyn</td><td>1</td><td>0</td><td>1</td></tr>
-        <tr><td class="tname">Gotham PC</td><td>Queens</td><td>0</td><td>0</td><td>0</td></tr>
+        <tr><td class="tname">Indoor Pickleball X</td><td>Brooklyn</td><td>0</td><td>0</td><td>0</td></tr>
       </tbody></table></div>
     </div>
     <div>
       <div class="eyb" style="margin-bottom:10px">Exhibition Match Schedule</div>
       <div class="fixtures">
         <div class="fx"><span class="st final">Final</span><span class="fxt"><b>All Blacks</b> (7) def. Hookers &middot; Jun 5 &middot; HKPC</span></div>
-        <div class="fx"><span class="st tba">Aug 7</span><span class="fxt"><b>Gotham PC</b> at RHPC Hookers &middot; RHPC</span></div>
-        <div class="fx"><span class="st tba">Aug 14</span><span class="fxt"><b>Gotham PC</b> at HKPC All Blacks &middot; HKPC</span></div>
+        <div class="fx"><span class="st tba">Aug 7</span><span class="fxt"><b>Indoor Pickleball X</b> at RHPC Hookers &middot; RHPC</span></div>
+        <div class="fx"><span class="st tba">Aug 14</span><span class="fxt"><b>Indoor Pickleball X</b> at HKPC All Blacks &middot; HKPC</span></div>
       </div>
       <p style="font-family:var(--mono);font-size:.6rem;color:#6f7894;margin-top:12px;letter-spacing:.06em">SCHEDULE UPDATED AS MATCHES ARE CONFIRMED</p>
     </div>
@@ -397,7 +398,7 @@ a.ex .ba{color:var(--gold-soft)}
   <div class="teamgrid">
     <article class="team" data-animate="fade-up">
       <div style="background:#0A0A0A;padding:24px;display:flex;align-items:center;justify-content:center;min-height:160px">
-        <img src="images/All_Blacks-Logo.png" alt="HKPC All Blacks" loading="lazy" style="max-width:80%;display:block;filter:invert(1)">
+        <img src="images/All_Blacks-Logo.png" alt="HKPC All Blacks" loading="lazy" style="max-width:80%;max-height:76px;width:auto;height:auto;display:block;filter:invert(1)">
       </div>
       <div style="padding:18px 24px 8px">
         <div class="dist">Hell's Kitchen &middot; Manhattan</div>
@@ -418,22 +419,22 @@ a.ex .ba{color:var(--gold-soft)}
       <div class="body">Brooklyn's Red Hook Pickleball Club &mdash; the All Blacks' first rivals and a founding member. Hungry for the rematch.</div>
     </article>
     <article class="team" data-animate="fade-up" data-delay="120">
-      <div style="background:#000000;padding:24px;display:flex;align-items:center;justify-content:center;min-height:160px">
-        <img src="images/gotham-logo.png" alt="Gotham PC" loading="lazy" style="max-width:80%;display:block">
+      <div style="background:#1A1A2E;padding:24px;display:flex;align-items:center;justify-content:center;min-height:160px">
+        <img src="images/ipx-logo.jpg" alt="Indoor Pickleball X" loading="lazy" style="max-width:80%;max-height:80px;object-fit:contain;display:block">
       </div>
       <div style="padding:18px 24px 8px">
-        <div class="dist">New York City</div>
-        <h3>Gotham PC</h3>
+        <div class="dist">Brooklyn</div>
+        <h3>Indoor Pickleball X</h3>
         <div class="sub">EST. 2026 &middot; FOUNDING CLUB</div>
       </div>
-      <div class="body">One of New York's premier independent clubs and a founding member of the Metropolitan League.</div>
+      <div class="body">Brooklyn's premier indoor club and a founding member of the Metropolitan League.</div>
     </article>
     <article class="team" data-animate="fade-up" data-delay="180">
       <div style="background:#C2532A;padding:24px;display:flex;align-items:center;justify-content:center;min-height:160px">
         <img src="images/conquer-logo.jpg" alt="Conquer" loading="lazy" style="max-width:80%;max-height:90px;display:block">
       </div>
       <div style="padding:18px 24px 8px">
-        <div class="dist">New York City</div>
+        <div class="dist">Manhattan</div>
         <h3>Conquer</h3>
         <div class="sub">EST. 2026 &middot; FOUNDING CLUB</div>
       </div>
@@ -443,8 +444,7 @@ a.ex .ba{color:var(--gold-soft)}
   <div class="eyb" style="margin-top:38px">Joining</div>
   <p style="color:#c2cadb;margin-top:8px">More clubs are coming aboard &mdash; the vision is a club in every borough.</p>
   <div class="expand">
-    <div class="ex" data-animate="fade-up"><svg viewBox="0 0 140 140"><use href="#d-emblem" style="color:#D8B262"/></svg><div class="bn">IPX</div><div class="ba">Joining</div></div>
-    <div class="ex" data-animate="fade-up" data-delay="40"><svg viewBox="0 0 140 140"><use href="#d-emblem" style="color:#1E8A7A"/></svg><div class="bn">Queens</div><div class="ba">Open</div></div>
+    <div class="ex" data-animate="fade-up"><svg viewBox="0 0 140 140"><use href="#d-emblem" style="color:#1E8A7A"/></svg><div class="bn">Queens</div><div class="ba">Open</div></div>
     <div class="ex" data-animate="fade-up" data-delay="80"><svg viewBox="0 0 140 140"><use href="#d-emblem" style="color:#B23A48"/></svg><div class="bn">The Bronx</div><div class="ba">Open</div></div>
     <div class="ex" data-animate="fade-up" data-delay="120"><svg viewBox="0 0 140 140"><use href="#d-emblem" style="color:#2F7D5B"/></svg><div class="bn">Staten Island</div><div class="ba">Open</div></div>
     <a class="ex" href="#contact" data-animate="fade-up" data-delay="160"><svg viewBox="0 0 140 140"><use href="#d-emblem" style="color:#C2922F"/></svg><div class="bn">Your Club</div><div class="ba">Apply &rarr;</div></a>
@@ -533,7 +533,7 @@ a.ex .ba{color:var(--gold-soft)}
 
 <footer class="foot"><svg class="foot-wm" viewBox="0 0 140 140" aria-hidden="true"><use href="#d-emblem" style="color:#D8B262"/></svg><div class="wrap">
   <div><b>Metropolitan League</b><div class="p" style="margin-top:6px">NYC inter-borough pickleball · Est. 2026</div></div>
-  <div class="p" style="text-align:right">Partners · The Botanist · Dink Dynamics · Pickle Pals · HKPC · Red Hook · Gotham<br><span style="color:#566080">An initiative of Backlot Labs</span></div>
+  <div class="p" style="text-align:right">Partners · The Botanist · Dink Dynamics · Pickle Pals · HKPC · Red Hook · IPX<br><span style="color:#566080">An initiative of Backlot Labs</span></div>
 </div></footer>
 
 <script>

@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HKPC All Blacks — NYC Pickleball</title>
+  <meta name="description" content="NYC's premiere amateur pickleball franchise. Competitive on the court. Successful off it.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Arial+Black&display=swap" rel="stylesheet">
+  <style>
+    /* ── TOKENS ─────────────────────────────────────────────────── */
+    :root {
+      --black:   #0A0A0A;
+      --offblack: #111111;
+      --card:    #1A1A1A;
+      --green:   #66CC33;
+      --white:   #FFFFFF;
+      --gray:    #888888;
+      --lightgray: #CCCCCC;
+      --maxw:    1080px;
+    }
+
+    /* ── RESET ──────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ── NAV ─────────────────────────────────────────────────────── */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 32px; height: 64px;
+      background: rgba(10,10,10,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(102,204,51,0.15);
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 12px;
+    }
+    .nav-logo img { width: 36px; height: 36px; object-fit: contain; }
+    .nav-wordmark {
+      font-family: Arial, sans-serif;
+      font-weight: 900;
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+      color: var(--white);
+    }
+    .nav-back {
+      font-size: 0.8rem;
+      color: var(--green);
+      letter-spacing: 0.1em;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .nav-back:hover { opacity: 0.7; }
+
+    /* ── HERO ────────────────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: 80px;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background-image: url('images/allblacks/photo-court3.jpg');
+      background-size: cover;
+      background-position: center 30%;
+      filter: brightness(0.35);
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.3) 60%, transparent 100%);
+    }
+    .hero-content {
+      position: relative;
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 32px;
+      width: 100%;
+    }
+    .hero-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      color: var(--green);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .hero-eyebrow span {
+      display: inline-block;
+      width: 32px; height: 2px;
+      background: var(--green);
+      vertical-align: middle;
+      margin-right: 12px;
+    }
+    .hero-h1 {
+      font-family: Arial, sans-serif;
+      font-weight: 900;
+      font-size: clamp(3.5rem, 10vw, 8rem);
+      line-height: 0.92;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 24px;
+    }
+    .hero-h1 em {
+      font-style: normal;
+      color: var(--green);
+    }
+    .hero-tagline {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: var(--lightgray);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 40px;
+    }
+    .hero-stats {
+      display: flex; gap: 40px; flex-wrap: wrap;
+    }
+    .hero-stat { }
+    .hero-stat .val {
+      font-family: Arial, sans-serif;
+      font-weight: 900;
+      font-size: 2rem;
+      color: var(--green);
+      line-height: 1;
+    }
+    .hero-stat .lbl {
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      color: var(--gray);
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    /* ── SECTION BASE ────────────────────────────────────────────── */
+    .section { padding: 96px 0; }
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 32px; }
+    .eyebrow {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      color: var(--green);
+      text-transform: uppercase;
+      display: flex; align-items: center; gap: 12px;
+      margin-bottom: 20px;
+    }
+    .eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 24px; height: 2px;
+      background: var(--green);
+      flex-shrink: 0;
+    }
+    .section-h2 {
+      font-family: Arial, sans-serif;
+      font-weight: 900;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      margin-bottom: 16px;
+    }
+    .section-lead {
+      font-size: 1.1rem;
+      color: var(--lightgray);
+      max-width: 600px;
+      margin-bottom: 56px;
+      line-height: 1.7;
+    }
+
+    /* ── TEAM SECTION ────────────────────────────────────────────── */
+    .team-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .team-photo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .team-photo-grid img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+    .team-photo-grid img:first-child {
+      grid-column: span 2;
+      aspect-ratio: 16/9;
+    }
+
+    /* Leadership */
+    .leadership {
+      margin-bottom: 48px;
+    }
+    .leadership-title {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--green);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .leader {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .leader:first-of-type { border-top: 1px solid rgba(255,255,255,0.08); }
+    .leader-role {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      color: var(--gray);
+      text-transform: uppercase;
+    }
+    .leader-name {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--white);
+    }
+
+    /* Roster tags */
+    .roster-title {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--green);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .tags {
+      display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 3px;
+      padding: 6px 12px;
+    }
+
+    /* ── STORY SECTION ───────────────────────────────────────────── */
+    .story-section { background: var(--offblack); }
+    .story-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .story-photo {
+      position: relative;
+    }
+    .story-photo img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+    .story-photo-badge {
+      position: absolute;
+      bottom: -20px; right: -20px;
+      background: var(--green);
+      color: var(--black);
+      font-family: Arial, sans-serif;
+      font-weight: 900;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 12px 16px;
+      border-radius: 3px;
+    }
+    .story-body p {
+      font-size: 1.05rem;
+      color: var(--lightgray);
+      line-height: 1.8;
+      margin-bottom: 40px;
+    }
+    .story-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .story-stat {
+      background: var(--card);
+      padding: 24px;
+    }
+    .story-stat .val {
+      font-family: Arial, sans-serif;
+      font-weight: 900;
+      font-size: 2.2rem;
+      color: var(--green);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .story-stat .lbl {
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      color: var(--gray);
+      text-transform: uppercase;
+    }
+
+    /* ── HOME COURT ──────────────────────────────────────────────── */
+    .court-section { background: var(--black); }
+    .court-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .court-photo-stack {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .court-photo-stack img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+    .court-photo-stack img:last-child {
+      grid-column: span 2;
+      aspect-ratio: 16/7;
+    }
+    .court-facts { }
+    .court-fact {
+      padding: 24px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .court-fact:first-child { border-top: 1px solid rgba(255,255,255,0.08); }
+    .court-fact-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--green);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .court-fact-value {
+      font-size: 1rem;
+      color: var(--lightgray);
+      line-height: 1.5;
+    }
+
+    /* ── FOOTER ──────────────────────────────────────────────────── */
+    .footer {
+      background: var(--offblack);
+      border-top: 1px solid rgba(102,204,51,0.2);
+      padding: 48px 0;
+    }
+    .footer-inner {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    .footer-brand {
+      font-family: Arial, sans-serif;
+      font-weight: 900;
+      font-size: 1.1rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .footer-brand span { color: var(--green); }
+    .footer-meta {
+      font-size: 0.78rem;
+      color: var(--gray);
+      letter-spacing: 0.08em;
+    }
+    .footer-league {
+      font-size: 0.78rem;
+      color: var(--gray);
+    }
+    .footer-league a {
+      color: var(--green);
+      font-weight: 700;
+    }
+    .footer-league a:hover { opacity: 0.7; }
+
+    /* ── MOBILE ──────────────────────────────────────────────────── */
+    @media (max-width: 860px) {
+      .team-layout,
+      .story-layout,
+      .court-layout { grid-template-columns: 1fr; gap: 40px; }
+      .team-photo-grid { order: -1; }
+      .story-photo { order: -1; }
+      .story-photo-badge { bottom: 12px; right: 12px; }
+      .court-photo-stack { order: -1; }
+      .nav { padding: 0 20px; }
+      .hero-content { padding: 0 20px; }
+      .wrap { padding: 0 20px; }
+      .section { padding: 64px 0; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 520px) {
+      .hero-stats { gap: 24px; }
+      .story-stats { grid-template-columns: 1fr 1fr; }
+      .team-photo-grid img:first-child { aspect-ratio: 4/3; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-logo">
+      <img src="images/allblacks/ab-logo.png" alt="HKPC All Blacks">
+      <span class="nav-wordmark">HKPC ALL BLACKS</span>
+    </div>
+    <a class="nav-back" href="index.html">← Metropolitan League</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow"><span></span>Hell's Kitchen · Manhattan · Est. 2026</p>
+      <h1 class="hero-h1">HKPC<br><em>All</em><br>Blacks.</h1>
+      <p class="hero-tagline">Loyalty Runs Black</p>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="val">1–0</div>
+          <div class="lbl">Inaugural Record</div>
+        </div>
+        <div class="hero-stat">
+          <div class="val">300+</div>
+          <div class="lbl">June 5 Attendance</div>
+        </div>
+        <div class="hero-stat">
+          <div class="val">~8K</div>
+          <div class="lbl">Total Impressions</div>
+        </div>
+        <div class="hero-stat">
+          <div class="val">2026</div>
+          <div class="lbl">Founded</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="section">
+    <div class="wrap">
+      <div class="eyebrow">The Team</div>
+      <h2 class="section-h2">Amateur on paper.<br>Pro everywhere else.</h2>
+      <p class="section-lead">A curated roster of NYC's most accomplished operators — competitive on the court, successful off it.</p>
+      <div class="team-layout">
+        <div class="team-photo-grid">
+          <img src="images/allblacks/photo-team-walking.jpg" alt="All Blacks team" loading="lazy">
+          <img src="images/allblacks/photo-court1.jpg" alt="All Blacks on court" loading="lazy">
+          <img src="images/allblacks/photo-bar.jpg" alt="All Blacks at HKPC" loading="lazy">
+        </div>
+        <div class="team-info">
+          <div class="leadership">
+            <p class="leadership-title">Leadership</p>
+            <div class="leader">
+              <span class="leader-role">Team Founder</span>
+              <span class="leader-name">Joe De Perio</span>
+            </div>
+            <div class="leader">
+              <span class="leader-role">A-Side Manager</span>
+              <span class="leader-name">Hub Uy</span>
+            </div>
+            <div class="leader">
+              <span class="leader-role">B-Side Manager</span>
+              <span class="leader-name">Jessica Doll</span>
+            </div>
+            <div class="leader">
+              <span class="leader-role">A-Side Captain</span>
+              <span class="leader-name">Drew Semler</span>
+            </div>
+          </div>
+          <p class="roster-title">Roster Professions</p>
+          <div class="tags">
+            <span class="tag">Medicine</span>
+            <span class="tag">Hedge Fund / PE</span>
+            <span class="tag">Investment Banking</span>
+            <span class="tag">Mgmt Consulting</span>
+            <span class="tag">Venture Capital</span>
+            <span class="tag">Big Tech</span>
+            <span class="tag">AI Investment</span>
+            <span class="tag">Hospitality</span>
+            <span class="tag">Marketing</span>
+            <span class="tag">Founders</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE STORY -->
+  <section class="section story-section">
+    <div class="wrap">
+      <div class="eyebrow">The Story</div>
+      <h2 class="section-h2">Not a pitch.<br>A proof point.</h2>
+      <div class="story-layout">
+        <div class="story-photo">
+          <img src="images/allblacks/photo-court4.jpg" alt="All Blacks inaugural match" loading="lazy">
+          <div class="story-photo-badge">June 5, 2026</div>
+        </div>
+        <div class="story-body">
+          <p>On June 5, 2026, the HKPC All Blacks took the floor against the RHPC Hookers in the inaugural match of the NYC Interborough League. We won. The bar buzzed. The Botanist signed on as the first official sponsor — and the inaugural Botanist All Black cocktail launched the same night.</p>
+          <p>The All Blacks are the engine behind the Metropolitan League — club vs. club, borough vs. borough. Year 1 is New York. The founding clubs are seated.</p>
+          <div class="story-stats">
+            <div class="story-stat">
+              <div class="val">W</div>
+              <div class="lbl">Inaugural Match</div>
+            </div>
+            <div class="story-stat">
+              <div class="val">300+</div>
+              <div class="lbl">Attendance</div>
+            </div>
+            <div class="story-stat">
+              <div class="val">~8K</div>
+              <div class="lbl">Impressions</div>
+            </div>
+            <div class="story-stat">
+              <div class="val">1st</div>
+              <div class="lbl">Sponsor Signed</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOME COURT -->
+  <section class="section court-section">
+    <div class="wrap">
+      <div class="eyebrow">Home Court</div>
+      <h2 class="section-h2">Hell's Kitchen<br>Pickleball Club.</h2>
+      <p class="section-lead">Manhattan's premier indoor pickleball destination — purpose-built, sponsor-ready, and home to NYC's most competitive amateur scene.</p>
+      <div class="court-layout">
+        <div class="court-photo-stack">
+          <img src="images/allblacks/photo-court2.jpg" alt="HKPC courts" loading="lazy">
+          <img src="images/allblacks/photo-team-walking.jpg" alt="HKPC facility" loading="lazy">
+          <img src="images/allblacks/photo-court3.jpg" alt="HKPC match night" loading="lazy">
+        </div>
+        <div class="court-facts">
+          <div class="court-fact">
+            <div class="court-fact-label">Location</div>
+            <div class="court-fact-value">Hell's Kitchen, Manhattan</div>
+          </div>
+          <div class="court-fact">
+            <div class="court-fact-label">Facility</div>
+            <div class="court-fact-value">Purpose-built indoor courts, dedicated lighting, climate control, broadcast-ready infrastructure</div>
+          </div>
+          <div class="court-fact">
+            <div class="court-fact-label">Community</div>
+            <div class="court-fact-value">200+ competitive members — NYC's most active pickleball scene</div>
+          </div>
+          <div class="court-fact">
+            <div class="court-fact-label">Activations</div>
+            <div class="court-fact-value">Banners, scoreboard, jerseys, team room, and bar — all sponsor-ready</div>
+          </div>
+          <div class="court-fact">
+            <div class="court-fact-label">League</div>
+            <div class="court-fact-value">Founding member and inaugural champions of the Metropolitan League</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">HKPC <span>All Blacks</span></div>
+      <div class="footer-meta">Est. 2026 · Hell's Kitchen, Manhattan · 1–0</div>
+      <div class="footer-league">Part of the <a href="index.html">Metropolitan League</a></div>
+    </div>
+  </footer>
+
+</body>
+</html>

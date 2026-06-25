@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<base target="_self">
+<title>Sponsor — Metropolitan League</title>
+<meta name="description" content="Partner with the Metropolitan League — New York City's first competitive inter-borough pickleball league. Founding sponsor seats are limited.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#15233F;--navy-2:#1C3056;--navy-deep:#0C152B;--gold:#B58A3C;--gold-soft:#D8B262;--cream:#F4F1E8;--paper-2:#ECE7D8;--lime:#D8B262;--lime-deep:#B58A3C;--mn:#C2922F;--bk:#B5562F;--qn:#1E8A7A;--bx:#B23A48;--si:#2F7D5B;--ink:#15233F;--mut:#6F7488;--line:#E2DCCB;--disp:'Space Grotesk',sans-serif;--num:'Anton',sans-serif;--body:'Hanken Grotesk',sans-serif;--mono:'Space Mono',monospace;--maxw:1080px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{margin:0;background:var(--navy-deep);color:var(--cream);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--gold);text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+/* NAV */
+.bar{position:sticky;top:0;z-index:70;background:rgba(11,20,38,.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(181,138,60,.22)}
+.bar .row{display:flex;align-items:center;gap:14px;height:62px;max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.logo{display:flex;align-items:center;gap:10px}.logo svg{width:30px;height:30px}.logo b{font-family:var(--disp);font-weight:700;color:var(--cream);font-size:.98rem}
+nav.links{display:flex;gap:4px;margin-left:auto;align-items:center}
+nav.links a{font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:#aeb6c9;padding:8px 11px;border-radius:30px}
+nav.links a:hover,nav.links a.active{color:var(--gold)}
+nav.links a.cta{background:var(--gold);color:var(--navy);font-weight:700}
+.menu-btn{display:none;margin-left:auto;background:none;border:1px solid rgba(255,255,255,.25);border-radius:8px;color:#cfd6e2;width:44px;height:44px;font-size:1.1rem;cursor:pointer}
+
+/* PAGE HERO */
+.pagehero{background:linear-gradient(150deg,#1C3056,#0B1426);color:var(--cream);padding:60px 0 52px;position:relative;overflow:hidden}
+.pagehero::before{content:"";position:absolute;inset:0;opacity:.06;background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(circle at 86% 24%,#000,transparent 70%)}
+.pagehero .wrap{position:relative;z-index:2}
+.crumb{font-family:var(--mono);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.pagehero h1{font-family:var(--disp);font-weight:700;font-size:clamp(2.2rem,5.4vw,3.6rem);letter-spacing:-.03em;text-transform:uppercase;margin:14px 0 0;line-height:1}
+.pagehero h1::after{content:"";display:block;width:64px;height:5px;background:var(--lime);border-radius:3px;margin-top:18px}
+.pagehero p{color:#dfe6f3;max-width:58ch;margin:16px 0 0;font-size:1.12rem}
+.pagehero .wm{position:absolute;right:-46px;top:50%;transform:translateY(-50%);width:300px;opacity:.08;pointer-events:none}
+
+/* SECTIONS */
+.section{padding:84px 0;position:relative}
+
+/* EYB */
+.eyb{font-family:var(--mono);font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-weight:700;display:inline-flex;align-items:center;gap:10px}
+.eyb::before{content:"";width:22px;height:3px;background:var(--gold);display:inline-block;flex-shrink:0}
+.h2{font-family:var(--disp);font-weight:700;font-size:clamp(2rem,5.2vw,3.4rem);letter-spacing:-.03em;text-transform:uppercase;line-height:.98;margin:12px 0 14px;position:relative}
+.h2::after{content:"";display:block;width:64px;height:5px;background:var(--lime);border-radius:3px;margin-top:16px}
+
+/* BUTTONS */
+.btn{font-family:var(--disp);font-weight:700;font-size:.95rem;border-radius:999px;padding:14px 26px;cursor:pointer;border:2px solid transparent;display:inline-block;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.lime{background:var(--lime);color:var(--navy);border-color:var(--lime);box-shadow:0 8px 26px rgba(181,138,60,.28)}
+.btn.gold{background:var(--gold);color:var(--navy);border-color:var(--gold)}
+.btn.ghost{background:transparent;border-color:rgba(255,255,255,.4);color:var(--cream)}
+
+/* SPONSOR TIERS */
+.tiers{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:26px}
+.tier{background:var(--navy);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:24px;display:flex;flex-direction:column;position:relative}
+.tier.hot{border-color:var(--lime);box-shadow:0 0 0 5px rgba(181,138,60,.08)}
+.tier .tn{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--lime)}
+.tier .pr{font-family:var(--num);font-size:3rem;line-height:.85;margin:10px 0 2px}
+.tier .per{font-family:var(--mono);font-size:.58rem;color:#8b93a8}
+.tier .seats{font-family:var(--mono);font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-soft);margin:10px 0 12px}
+.tier ul{list-style:none;padding:0;margin:0 0 16px;flex:1}
+.tier li{font-size:.82rem;color:#c2cadb;padding:5px 0;border-bottom:1px dashed rgba(255,255,255,.12)}
+.tier li:last-child{border-bottom:none}
+.tier .pick{font-family:var(--disp);font-weight:700;font-size:.82rem;text-align:center;border-radius:999px;padding:14px;background:transparent;border:2px solid var(--lime);color:var(--lime);display:block}
+.tier.hot .pick{background:var(--lime);color:var(--navy)}
+.spnote{font-family:var(--mono);font-size:.76rem;color:#8b93a8;margin-top:16px;text-align:center}
+
+/* CONTACT */
+.contact .grid{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center}
+.cbox{background:var(--navy);border:1px solid rgba(181,138,60,.2);border-radius:20px;padding:30px}
+.cbox .r{display:flex;align-items:baseline;gap:12px;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:.96rem}
+.cbox .r:last-child{border-bottom:none}
+.cbox .k{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--lime);width:84px;flex-shrink:0}
+
+/* FOOTER */
+.foot{background:#070d1a;padding:38px 0 48px;border-top:1px solid rgba(255,255,255,.08);color:#8b93a8}
+.foot .wrap{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center}
+.foot b{font-family:var(--disp);color:var(--cream);font-size:1.05rem}
+.foot .p{font-family:var(--mono);font-size:.6rem;letter-spacing:.06em;text-transform:uppercase}
+
+/* ANIMATE */
+[data-animate]{opacity:0;transition:opacity .55s ease,transform .55s ease}
+[data-animate="fade-up"]{transform:translateY(20px)}
+[data-animate].is-visible{opacity:1;transform:none}
+
+@media(max-width:900px){
+  nav.links{display:none;position:absolute;top:62px;left:0;right:0;background:var(--navy-deep);flex-direction:column;padding:10px;border-bottom:1px solid rgba(181,138,60,.2)}
+  nav.links.open{display:flex}.menu-btn{display:block}
+  nav.links a{padding:14px 16px}
+  .tiers{grid-template-columns:repeat(2,1fr)}
+  .contact .grid{grid-template-columns:1fr}
+}
+@media(max-width:520px){
+  .tiers{grid-template-columns:1fr}
+  [data-animate]{opacity:1!important;transform:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="d-emblem" viewBox="0 0 140 140"><circle cx="70" cy="70" r="66" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="70" cy="70" r="58" fill="none" stroke="currentColor" stroke-width="1"/><line x1="46" y1="102" x2="94" y2="102" stroke="currentColor" stroke-width="1.6" opacity=".6"/><path d="M48 98 Q70 46 94 68" fill="none" stroke="currentColor" stroke-width="4.6" stroke-linecap="round"/><circle cx="48" cy="98" r="4" fill="currentColor"/><circle cx="94" cy="68" r="8.5" fill="currentColor"/></symbol>
+</defs></svg>
+
+<header class="bar"><div class="row">
+  <a class="logo" href="index.html"><svg viewBox="0 0 140 140"><use href="#d-emblem" style="color:#D8B262"/></svg><b>Metropolitan League</b></a>
+  <button class="menu-btn" onclick="document.getElementById('nav').classList.toggle('open')" aria-label="Menu">≡</button>
+  <nav class="links" id="nav"><a href="index.html">Home</a><a href="about.html">About</a><a href="rules.html">Format &amp; Rules</a><a href="index.html#teams">Teams</a><a href="sponsor.html" class="active">Sponsor</a><a class="cta" href="#contact">Join</a></nav>
+</div></header>
+
+<div class="pagehero">
+  <div class="wrap">
+    <div class="crumb">Metropolitan League</div>
+    <h1>Sponsor<br>the League</h1>
+    <p>Get in on the ground floor. Founding partners earn right of first refusal as we scale to the Tri-State League — and the seats are capped.</p>
+  </div>
+  <svg class="wm" viewBox="0 0 140 140" aria-hidden="true"><use href="#d-emblem" style="color:#D8B262"/></svg>
+</div>
+
+<!-- TIERS -->
+<section class="section" id="tiers"><div class="wrap">
+  <span class="eyb">Partnership</span>
+  <h2 class="h2">Choose your tier</h2>
+  <div class="tiers">
+    <div class="tier hot" data-animate="fade-up"><div class="tn">Title · 1 of 1</div><div class="pr" style="color:var(--lime)">$50K</div><div class="per">/ season</div><div class="seats">Presenting</div><ul><li>Presenting sponsor billing</li><li>Jersey front · largest</li><li>Scoreboard + court banners</li><li>All Social Media</li><li>ROFR on All Expansion Opportunities</li></ul><a class="pick" href="#contact">Enquire</a></div>
+    <div class="tier" data-animate="fade-up" data-delay="50"><div class="tn">Founding · up to 3</div><div class="pr">$20K</div><div class="per">/ season</div><div class="seats">Founding Partner</div><ul><li>Founding designation</li><li>Jersey sleeve placement</li><li>Signage and Social Media Package</li><li>Featured activation</li><li>ROFR · League Yr 1–3</li></ul><a class="pick" href="#contact">Enquire</a></div>
+    <div class="tier" data-animate="fade-up" data-delay="100"><div class="tn">Court · up to 5</div><div class="pr">$10K</div><div class="per">/ season</div><div class="seats">Court Partner</div><ul><li>Court-side banner</li><li>Email + flyer logo</li><li>Social Media Package</li><li>Signage Package</li></ul><a class="pick" href="#contact">Enquire</a></div>
+    <div class="tier" data-animate="fade-up" data-delay="150"><div class="tn">Supporter · open</div><div class="pr">$2K</div><div class="per">/ season</div><div class="seats">Supporter</div><ul><li>Email + flyer logo</li><li>Match recap mention</li><li>Founding designation</li></ul><a class="pick" href="#contact">Enquire</a></div>
+  </div>
+  <p class="spnote">Founding seats are capped — 1 Title · 3 Founding. Once they're gone, they're gone.</p>
+</div></section>
+
+<!-- CONTACT -->
+<section class="section contact" id="contact" style="background:linear-gradient(180deg,#0e1a30,#0B1426)"><div class="wrap grid" style="display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center">
+  <div>
+    <span class="eyb">Join / Contact</span>
+    <h2 class="h2">Get on the court</h2>
+    <p style="color:#c2cadb;max-width:44ch">Enter a club, sponsor the league, or bring the Metropolitan League to your borough. Let's talk.</p>
+    <div style="margin-top:22px;display:flex;gap:12px;flex-wrap:wrap">
+      <a class="btn lime" href="mailto:jad@backlotlabs.ai?subject=Metropolitan%20League%20Inquiry">Email the League</a>
+      <a class="btn ghost" href="#tiers">Sponsor Tiers &uarr;</a>
+    </div>
+  </div>
+  <div class="cbox" data-animate="fade-up">
+    <div class="r"><span class="k">Director</span><span>Joe De Perio</span></div>
+    <div class="r"><span class="k">Email</span><span><a href="mailto:jad@backlotlabs.ai">jad@backlotlabs.ai</a></span></div>
+    <div class="r"><span class="k">Phone</span><span><a href="tel:+19175395027">917.539.5027</a></span></div>
+    <div class="r"><span class="k">Home</span><span>Hell's Kitchen Pickleball Club · NYC</span></div>
+  </div>
+</div></section>
+
+<footer class="foot"><div class="wrap">
+  <div><b>Metropolitan League</b><div class="p" style="margin-top:6px">NYC inter-borough pickleball · Est. 2026</div></div>
+  <div class="p" style="text-align:right">Partners · The Botanist · Dink Dynamics · Pickle Pals · HKPC · Red Hook · IPX<br><span style="color:#566080">An initiative of Backlot Labs</span></div>
+</div></footer>
+
+<script>
+document.querySelectorAll('#nav a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('nav').classList.remove('open')})});
+(function(){var ob=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){var el=en.target,d=parseInt(el.getAttribute('data-delay')||'0',10);setTimeout(function(){el.classList.add('is-visible')},d);ob.unobserve(el)}})},{threshold:0,rootMargin:"0px 0px -10px 0px"});document.querySelectorAll('[data-animate]').forEach(function(el){ob.observe(el)});})();
+</script>
+</body>
+</html>

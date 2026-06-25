@@ -190,10 +190,13 @@ nav.links a.cta{background:var(--lime);color:var(--navy);font-weight:700}
   .bt .nn{font-size:2.6rem;line-height:1.1;max-width:100%}
   .bt.big .emb{width:80px;height:80px}
   .expand{grid-template-columns:repeat(2,1fr)}
-  .hero h1{font-size:clamp(2.4rem,8vw,3.2rem)}
-  .hero-lockup{flex-direction:row;flex-wrap:nowrap;align-items:center;gap:10px;padding:10px 20px 10px 10px}
+  .hero .wrap{padding:0 20px}
+  .hero h1{font-size:clamp(2.4rem,8vw,3.2rem);max-width:100%;overflow-wrap:break-word}
+  .hero .sub{max-width:100%;overflow-wrap:break-word}
+  .hero-lockup{flex-direction:row;flex-wrap:nowrap;align-items:center;gap:10px;padding:10px 16px 10px 10px;max-width:calc(100vw - 48px);overflow:hidden}
   .hero-lockup svg{width:40px;height:40px;flex-shrink:0}
-  .hl-name{font-size:1.1rem;white-space:nowrap}
+  .hl-name{font-size:1rem;white-space:nowrap}
+  .hl-sub{white-space:normal}
   .hero .btns{padding-bottom:80px}
   [data-animate]{opacity:1!important;transform:none!important;transition:none!important}
 }

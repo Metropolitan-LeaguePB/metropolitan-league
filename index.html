@@ -542,22 +542,26 @@ a.ex .ba{color:var(--gold-soft)}
 <script>
 (function(){var ob=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){var el=en.target,d=parseInt(el.getAttribute('data-delay')||'0',10);setTimeout(function(){el.classList.add('is-visible')},d);ob.unobserve(el)}})},{threshold:0,rootMargin:"0px 0px -10px 0px"});document.querySelectorAll('[data-animate]').forEach(function(el){ob.observe(el)});})();
 document.querySelectorAll('#nav a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('nav').classList.remove('open')})});
-window.addEventListener('load',function(){
-  var track=document.querySelector('.ticker .track');
-  if(!track||window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;
-  var half=track.scrollWidth/2;
-  if(half<=0)return;
-  var pos=0,last=null,speed=40;
-  function tick(ts){
-    if(last===null)last=ts;
-    var dt=(ts-last)/1000;last=ts;
-    pos-=speed*dt;
-    if(pos<=-half)pos+=half;
-    track.style.transform='translateX('+pos+'px)';
+(function(){
+  function startTicker(){
+    var track=document.querySelector('.ticker .track');
+    if(!track)return;
+    var half=track.scrollWidth/2;
+    if(half<=0){setTimeout(startTicker,300);return;}
+    var pos=0,last=null,speed=40;
+    function tick(ts){
+      if(last===null)last=ts;
+      var dt=(ts-last)/1000;last=ts;
+      pos-=speed*dt;
+      if(pos<=-half)pos+=half;
+      track.style.transform='translateX('+pos+'px)';
+      requestAnimationFrame(tick);
+    }
     requestAnimationFrame(tick);
   }
-  requestAnimationFrame(tick);
-});
+  if(document.readyState==='complete'){startTicker();}
+  else{window.addEventListener('load',startTicker);}
+})();
 </script>
 </body>
 </html>

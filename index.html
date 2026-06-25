@@ -57,12 +57,9 @@ nav.links a.cta{background:var(--lime);color:var(--navy);font-weight:700}
 
 /* TICKER */
 .ticker{background:var(--lime);color:var(--navy);overflow:hidden;white-space:nowrap;border-top:3px solid var(--navy);border-bottom:3px solid var(--navy)}
-.ticker .track{display:inline-block;padding:11px 0;-webkit-animation:scroll 30s linear infinite;animation:scroll 30s linear infinite;font-family:var(--mono);font-weight:700;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;will-change:transform;-webkit-transform:translateZ(0);transform:translateZ(0)}
+.ticker .track{display:inline-block;padding:11px 0;font-family:var(--mono);font-weight:700;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;will-change:transform}
 .ticker .track span{margin:0 14px}
 .ticker .track .dot{color:var(--lime-deep)}
-@-webkit-keyframes scroll{to{-webkit-transform:translateX(-50%);transform:translateX(-50%)}}
-@keyframes scroll{to{transform:translateX(-50%)}}
-@media (prefers-reduced-motion:reduce){.ticker .track{animation:none}}
 
 /* LEAGUE — bento */
 .bento{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px}
@@ -193,9 +190,9 @@ nav.links a.cta{background:var(--lime);color:var(--navy);font-weight:700}
   .hero .wrap{padding:0 20px}
   .hero h1{font-size:clamp(2.4rem,8vw,3.2rem);max-width:100%;overflow-wrap:break-word}
   .hero .sub{max-width:100%;overflow-wrap:break-word}
-  .hero-lockup{flex-direction:row;flex-wrap:nowrap;align-items:center;gap:10px;padding:10px 16px 10px 10px;max-width:calc(100vw - 48px);overflow:hidden}
+  .hero-lockup{display:inline-flex;flex-direction:row;align-items:center;gap:10px;padding:10px 16px 10px 10px;max-width:calc(100vw - 32px);overflow:hidden}
   .hero-lockup svg{width:40px;height:40px;flex-shrink:0}
-  .hl-name{font-size:1rem;white-space:nowrap}
+  .hl-name{font-size:clamp(0.85rem,3.5vw,1.4rem)}
   .hl-sub{white-space:normal}
   .hero .btns{padding-bottom:80px}
   [data-animate]{opacity:1!important;transform:none!important;transition:none!important}
@@ -545,6 +542,21 @@ a.ex .ba{color:var(--gold-soft)}
 <script>
 (function(){var ob=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){var el=en.target,d=parseInt(el.getAttribute('data-delay')||'0',10);setTimeout(function(){el.classList.add('is-visible')},d);ob.unobserve(el)}})},{threshold:0,rootMargin:"0px 0px -10px 0px"});document.querySelectorAll('[data-animate]').forEach(function(el){ob.observe(el)});})();
 document.querySelectorAll('#nav a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('nav').classList.remove('open')})});
+(function(){
+  var track=document.querySelector('.ticker .track');
+  if(!track||window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  var pos=0,last=null,half=null,speed=40;
+  function tick(ts){
+    if(last===null)last=ts;
+    var dt=(ts-last)/1000;last=ts;
+    if(!half)half=track.scrollWidth/2;
+    pos-=speed*dt;
+    if(pos<=-half)pos+=half;
+    track.style.transform='translateX('+pos+'px)';
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+})();
 </script>
 </body>
 </html>

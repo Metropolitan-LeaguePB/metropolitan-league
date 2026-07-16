@@ -237,6 +237,46 @@
       color: var(--white);
     }
 
+    /* Match schedule */
+    .match-schedule {
+      margin-bottom: 48px;
+    }
+    .schedule-title {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--green);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .match {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .match:first-of-type { border-top: 1px solid rgba(255,255,255,0.08); }
+    .match-status {
+      flex: 0 0 auto;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 3px;
+      color: var(--black);
+      background: var(--gray);
+    }
+    .match-status.final { background: var(--green); }
+    .match-status.upcoming { background: var(--lightgray); }
+    .match-status.event { background: var(--white); }
+    .match-text {
+      font-size: 0.9rem;
+      color: var(--lightgray);
+    }
+    .match-text b { color: var(--white); }
+
     /* Roster tags */
     .roster-title {
       font-size: 0.7rem;
@@ -495,11 +535,24 @@
               <span class="leader-role">B-Side Manager</span>
               <span class="leader-name">Jessica Doll</span>
             </div>
-            <div class="leader">
-              <span class="leader-role">A-Side Captain</span>
-              <span class="leader-name">Drew Semler</span>
+          </div>
+
+          <div class="match-schedule">
+            <p class="schedule-title">Match Schedule</p>
+            <div class="match">
+              <span class="match-status final">Final</span>
+              <span class="match-text"><b>All Blacks</b> (7) def. Hookers &middot; Jun 5 &middot; HKPC</span>
+            </div>
+            <div class="match match-event">
+              <span class="match-status event">Event</span>
+              <span class="match-text"><b>White Party</b> &middot; Jul 31 &middot; All Founding Clubs &middot; HKPC</span>
+            </div>
+            <div class="match">
+              <span class="match-status upcoming">Aug 14</span>
+              <span class="match-text">Gotham Pickleball at <b>HKPC All Blacks</b> &middot; HKPC</span>
             </div>
           </div>
+
           <p class="roster-title">Roster Professions</p>
           <div class="tags">
             <span class="tag">Medicine</span>

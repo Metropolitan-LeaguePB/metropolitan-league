@@ -496,6 +496,165 @@
       line-height: 1.6;
     }
 
+    /* ── RESULTS SECTION ─────────────────────────────────────────── */
+    .results-section { background: var(--black); }
+    .scoreboard {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 24px;
+      background: var(--card);
+      border: 1px solid rgba(102,204,51,0.2);
+      border-radius: 4px;
+      padding: 28px 32px;
+    }
+    .sb-name {
+      font-family: Arial, sans-serif;
+      font-weight: 900;
+      font-size: 1.05rem;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      line-height: 1.2;
+    }
+    .sb-meta {
+      font-size: 0.64rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-top: 6px;
+    }
+    .sb-team.right { text-align: right; }
+    .sb-score {
+      font-family: Arial, sans-serif;
+      font-weight: 900;
+      font-size: clamp(2rem, 6vw, 3rem);
+      line-height: 1;
+      white-space: nowrap;
+      color: var(--gray);
+    }
+    .sb-score .sb-win { color: var(--green); }
+    .sb-score .sb-dash { margin: 0 6px; }
+    .sb-when {
+      margin-top: 14px;
+      font-size: 0.74rem;
+      color: var(--gray);
+      letter-spacing: 0.05em;
+      line-height: 1.5;
+    }
+    .div-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 28px 0 48px;
+    }
+    .div-chip {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 3px;
+      padding: 8px 12px;
+    }
+    .div-chip.won { border-color: rgba(102,204,51,0.5); }
+    .dc-lbl {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: var(--gray);
+      text-transform: uppercase;
+    }
+    .dc-score {
+      font-family: Arial, sans-serif;
+      font-weight: 900;
+      font-size: 0.95rem;
+      color: var(--lightgray);
+    }
+    .div-chip.won .dc-score { color: var(--green); }
+    .division { margin-bottom: 44px; }
+    .division:last-of-type { margin-bottom: 0; }
+    .dv-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      padding-bottom: 12px;
+      margin-bottom: 14px;
+      border-bottom: 1px solid rgba(102,204,51,0.25);
+    }
+    .dv-label {
+      font-family: Arial, sans-serif;
+      font-weight: 900;
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--green);
+    }
+    .dv-points {
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gray);
+    }
+    .dv-points b { color: var(--white); font-size: 1rem; }
+    .dv-lineup {
+      font-size: 0.8rem;
+      color: var(--lightgray);
+      line-height: 1.7;
+    }
+    .dv-lineup span {
+      display: inline-block;
+      min-width: 88px;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gray);
+    }
+    .gwrap { overflow-x: auto; margin-top: 16px; }
+    .gtable {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.82rem;
+      min-width: 520px;
+    }
+    .gtable th {
+      text-align: left;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gray);
+      padding: 8px 10px;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+      white-space: nowrap;
+    }
+    .gtable td {
+      padding: 10px;
+      color: var(--lightgray);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .gtable .gnum { color: var(--gray); font-size: 0.72rem; white-space: nowrap; width: 1%; }
+    .gtable .gs {
+      font-family: Arial, sans-serif;
+      font-weight: 900;
+      color: var(--lightgray);
+      text-align: center;
+      white-space: nowrap;
+      width: 1%;
+    }
+    .gtable tr.w .gs { color: var(--green); }
+    .gtable .res {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray);
+      white-space: nowrap;
+      width: 1%;
+    }
+    .gtable tr.w .res { color: var(--green); }
+
     /* ── ROSTER SECTION ──────────────────────────────────────────── */
     .bracket-grid {
       display: grid;
@@ -562,6 +721,9 @@
       .fixture-venue { grid-column: 2; grid-row: 1; }
       .fixture-date { grid-column: 1 / -1; }
       .fixture-opp { grid-column: 1 / -1; }
+      .scoreboard { grid-template-columns: 1fr; gap: 16px; padding: 22px; }
+      .sb-team.right { text-align: left; }
+      .dv-lineup span { min-width: 0; margin-right: 8px; }
     }
     @media (max-width: 520px) {
       .hero-stats { gap: 24px; }
@@ -624,13 +786,13 @@
           <div class="fixture-opp"><b>All Blacks</b> def. Red Hook<span class="fixture-badge">Won</span></div>
           <div class="fixture-venue">HKPC</div>
         </div>
-        <div class="fixture next">
+        <div class="fixture">
           <div class="fixture-week">Week 1</div>
           <div class="fixture-date">Sun Sep 27</div>
-          <div class="fixture-opp">at <b>Gotham Pickleball</b> &middot; 6–8 PM</div>
+          <div class="fixture-opp">at <b>Gotham Pickleball</b> &middot; won 18&ndash;12<span class="fixture-badge">Won</span></div>
           <div class="fixture-venue">Gotham</div>
         </div>
-        <div class="fixture">
+        <div class="fixture next">
           <div class="fixture-week">Week 2</div>
           <div class="fixture-date">Sun Oct 4</div>
           <div class="fixture-opp">vs <b>PKLN</b></div>
@@ -656,6 +818,147 @@
         </div>
       </div>
       <p class="schedule-note">Championship weekend locations to be determined by results.</p>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section class="section results-section" id="results">
+    <div class="wrap">
+      <div class="eyebrow">Results</div>
+      <h2 class="section-h2">Match Day 1.<br>Away and won.</h2>
+      <p class="section-lead">Gotham Hunter&rsquo;s Point, Long Island City &mdash; the All Blacks took 18 of 30 games and four of the five divisions. Peter Lehv and Martin Pico both went unbeaten at 4&ndash;0; Jack Duxin played two divisions and finished 6&ndash;2.</p>
+
+      <div class="scoreboard">
+        <div class="sb-team">
+          <div class="sb-name">HKPC All Blacks</div>
+          <div class="sb-meta">Away &middot; A Team</div>
+        </div>
+        <div class="sb-score"><span class="sb-win">18</span><span class="sb-dash">&ndash;</span><span>12</span></div>
+        <div class="sb-team right">
+          <div class="sb-name">Gotham Pickleball</div>
+          <div class="sb-meta">Home &middot; A Team</div>
+        </div>
+      </div>
+      <p class="sb-when">Sun, Sep 27, 2026 &middot; 6:00 PM &middot; Gotham Hunter&rsquo;s Point, 52-37 2nd St, Long Island City, NY 11101</p>
+
+      <div class="div-strip">
+        <div class="div-chip won"><span class="dc-lbl">D1</span><span class="dc-score">5&ndash;1</span></div>
+        <div class="div-chip won"><span class="dc-lbl">D2</span><span class="dc-score">4&ndash;2</span></div>
+        <div class="div-chip won"><span class="dc-lbl">D3</span><span class="dc-score">4&ndash;2</span></div>
+        <div class="div-chip won"><span class="dc-lbl">D4</span><span class="dc-score">4&ndash;2</span></div>
+        <div class="div-chip lost"><span class="dc-lbl">D5</span><span class="dc-score">1&ndash;5</span></div>
+      </div>
+
+      <div class="division">
+        <div class="dv-head">
+          <div class="dv-label">Division 1</div>
+          <div class="dv-points">All Blacks <b>5</b> &ndash; <b>1</b> Gotham</div>
+        </div>
+        <p class="dv-lineup"><span>All Blacks</span>Alan Ma &middot; Brigitte Wu &middot; Peter Lehv</p>
+        <p class="dv-lineup"><span>Gotham</span>Anne Wen &middot; Jackson Orden &middot; Jake Goldsmith</p>
+        <div class="gwrap">
+          <table class="gtable">
+            <thead><tr><th>Game</th><th>All Blacks pair</th><th>Score</th><th>Gotham pair</th><th></th></tr></thead>
+            <tbody>
+              <tr class="w"><td class="gnum">1</td><td>Peter Lehv / Alan Ma</td><td class="gs">11&ndash;7</td><td>Jake Goldsmith / Jackson Orden</td><td class="res">W</td></tr>
+              <tr class="l"><td class="gnum">2</td><td>Alan Ma / Brigitte Wu</td><td class="gs">10&ndash;12</td><td>Jake Goldsmith / Anne Wen</td><td class="res">L</td></tr>
+              <tr class="w"><td class="gnum">3</td><td>Peter Lehv / Brigitte Wu</td><td class="gs">11&ndash;1</td><td>Jackson Orden / Anne Wen</td><td class="res">W</td></tr>
+              <tr class="w"><td class="gnum">4</td><td>Peter Lehv / Alan Ma</td><td class="gs">11&ndash;6</td><td>Jake Goldsmith / Jackson Orden</td><td class="res">W</td></tr>
+              <tr class="w"><td class="gnum">5</td><td>Peter Lehv / Brigitte Wu</td><td class="gs">11&ndash;1</td><td>Jake Goldsmith / Anne Wen</td><td class="res">W</td></tr>
+              <tr class="w"><td class="gnum">6</td><td>Alan Ma / Brigitte Wu</td><td class="gs">11&ndash;0</td><td>Jackson Orden / Anne Wen</td><td class="res">W</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="division">
+        <div class="dv-head">
+          <div class="dv-label">Division 2</div>
+          <div class="dv-points">All Blacks <b>4</b> &ndash; <b>2</b> Gotham</div>
+        </div>
+        <p class="dv-lineup"><span>All Blacks</span>Drew Semler &middot; Jack Duxin &middot; Kaitlyn Zheng</p>
+        <p class="dv-lineup"><span>Gotham</span>Brandon Hunter &middot; Ishita Ved &middot; Moon Sherpa</p>
+        <div class="gwrap">
+          <table class="gtable">
+            <thead><tr><th>Game</th><th>All Blacks pair</th><th>Score</th><th>Gotham pair</th><th></th></tr></thead>
+            <tbody>
+              <tr class="w"><td class="gnum">1</td><td>Drew Semler / Jack Duxin</td><td class="gs">11&ndash;8</td><td>Brandon Hunter / Moon Sherpa</td><td class="res">W</td></tr>
+              <tr class="l"><td class="gnum">2</td><td>Drew Semler / Kaitlyn Zheng</td><td class="gs">10&ndash;12</td><td>Brandon Hunter / Ishita Ved</td><td class="res">L</td></tr>
+              <tr class="l"><td class="gnum">3</td><td>Jack Duxin / Kaitlyn Zheng</td><td class="gs">8&ndash;11</td><td>Moon Sherpa / Ishita Ved</td><td class="res">L</td></tr>
+              <tr class="w"><td class="gnum">4</td><td>Drew Semler / Jack Duxin</td><td class="gs">11&ndash;3</td><td>Brandon Hunter / Moon Sherpa</td><td class="res">W</td></tr>
+              <tr class="w"><td class="gnum">5</td><td>Drew Semler / Kaitlyn Zheng</td><td class="gs">11&ndash;8</td><td>Brandon Hunter / Ishita Ved</td><td class="res">W</td></tr>
+              <tr class="w"><td class="gnum">6</td><td>Jack Duxin / Kaitlyn Zheng</td><td class="gs">11&ndash;7</td><td>Moon Sherpa / Ishita Ved</td><td class="res">W</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="division">
+        <div class="dv-head">
+          <div class="dv-label">Division 3</div>
+          <div class="dv-points">All Blacks <b>4</b> &ndash; <b>2</b> Gotham</div>
+        </div>
+        <p class="dv-lineup"><span>All Blacks</span>Jack Duxin &middot; Clay Schubiner &middot; Ashley Micallef</p>
+        <p class="dv-lineup"><span>Gotham</span>Christian Park &middot; Kristian Mayor &middot; Jessie Charbonneau</p>
+        <div class="gwrap">
+          <table class="gtable">
+            <thead><tr><th>Game</th><th>All Blacks pair</th><th>Score</th><th>Gotham pair</th><th></th></tr></thead>
+            <tbody>
+              <tr class="l"><td class="gnum">1</td><td>Clay Schubiner / Jack Duxin</td><td class="gs">6&ndash;11</td><td>Kristian Mayor / Christian Park</td><td class="res">L</td></tr>
+              <tr class="w"><td class="gnum">2</td><td>Jack Duxin / Ashley Micallef</td><td class="gs">11&ndash;4</td><td>Kristian Mayor / Jessie Charbonneau</td><td class="res">W</td></tr>
+              <tr class="w"><td class="gnum">3</td><td>Clay Schubiner / Ashley Micallef</td><td class="gs">11&ndash;6</td><td>Christian Park / Jessie Charbonneau</td><td class="res">W</td></tr>
+              <tr class="w"><td class="gnum">4</td><td>Clay Schubiner / Jack Duxin</td><td class="gs">11&ndash;2</td><td>Kristian Mayor / Christian Park</td><td class="res">W</td></tr>
+              <tr class="w"><td class="gnum">5</td><td>Jack Duxin / Ashley Micallef</td><td class="gs">11&ndash;7</td><td>Christian Park / Jessie Charbonneau</td><td class="res">W</td></tr>
+              <tr class="l"><td class="gnum">6</td><td>Clay Schubiner / Ashley Micallef</td><td class="gs">8&ndash;11</td><td>Kristian Mayor / Jessie Charbonneau</td><td class="res">L</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="division">
+        <div class="dv-head">
+          <div class="dv-label">Division 4</div>
+          <div class="dv-points">All Blacks <b>4</b> &ndash; <b>2</b> Gotham</div>
+        </div>
+        <p class="dv-lineup"><span>All Blacks</span>Martin Pico &middot; Joshua Kramer-Eisenbud &middot; Angie Hoang</p>
+        <p class="dv-lineup"><span>Gotham</span>David Goldberg &middot; Richard Min &middot; Shay Rowbotham</p>
+        <div class="gwrap">
+          <table class="gtable">
+            <thead><tr><th>Game</th><th>All Blacks pair</th><th>Score</th><th>Gotham pair</th><th></th></tr></thead>
+            <tbody>
+              <tr class="w"><td class="gnum">1</td><td>Joshua Kramer-Eisenbud / Martin Pico</td><td class="gs">11&ndash;2</td><td>David Goldberg / Richard Min</td><td class="res">W</td></tr>
+              <tr class="w"><td class="gnum">2</td><td>Martin Pico / Angie Hoang</td><td class="gs">11&ndash;6</td><td>David Goldberg / Shay Rowbotham</td><td class="res">W</td></tr>
+              <tr class="l"><td class="gnum">3</td><td>Joshua Kramer-Eisenbud / Angie Hoang</td><td class="gs">5&ndash;11</td><td>Richard Min / Shay Rowbotham</td><td class="res">L</td></tr>
+              <tr class="w"><td class="gnum">4</td><td>Joshua Kramer-Eisenbud / Martin Pico</td><td class="gs">12&ndash;10</td><td>David Goldberg / Richard Min</td><td class="res">W</td></tr>
+              <tr class="w"><td class="gnum">5</td><td>Martin Pico / Angie Hoang</td><td class="gs">11&ndash;5</td><td>David Goldberg / Shay Rowbotham</td><td class="res">W</td></tr>
+              <tr class="l"><td class="gnum">6</td><td>Joshua Kramer-Eisenbud / Angie Hoang</td><td class="gs">11&ndash;13</td><td>Richard Min / Shay Rowbotham</td><td class="res">L</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="division">
+        <div class="dv-head">
+          <div class="dv-label">Division 5</div>
+          <div class="dv-points">All Blacks <b>1</b> &ndash; <b>5</b> Gotham</div>
+        </div>
+        <p class="dv-lineup"><span>All Blacks</span>Qaisar Hasan &middot; Raymond Ng &middot; Meredith Brunette</p>
+        <p class="dv-lineup"><span>Gotham</span>Garry Cowell &middot; Rodney Benson &middot; Jenny Tien</p>
+        <div class="gwrap">
+          <table class="gtable">
+            <thead><tr><th>Game</th><th>All Blacks pair</th><th>Score</th><th>Gotham pair</th><th></th></tr></thead>
+            <tbody>
+              <tr class="l"><td class="gnum">1</td><td>Raymond Ng / Qaisar Hasan</td><td class="gs">8&ndash;11</td><td>Garry Cowell / Rodney Benson</td><td class="res">L</td></tr>
+              <tr class="w"><td class="gnum">2</td><td>Qaisar Hasan / Meredith Brunette</td><td class="gs">11&ndash;9</td><td>Garry Cowell / Jenny Tien</td><td class="res">W</td></tr>
+              <tr class="l"><td class="gnum">3</td><td>Raymond Ng / Meredith Brunette</td><td class="gs">5&ndash;11</td><td>Rodney Benson / Jenny Tien</td><td class="res">L</td></tr>
+              <tr class="l"><td class="gnum">4</td><td>Raymond Ng / Qaisar Hasan</td><td class="gs">0&ndash;11</td><td>Garry Cowell / Rodney Benson</td><td class="res">L</td></tr>
+              <tr class="l"><td class="gnum">5</td><td>Raymond Ng / Meredith Brunette</td><td class="gs">4&ndash;11</td><td>Garry Cowell / Jenny Tien</td><td class="res">L</td></tr>
+              <tr class="l"><td class="gnum">6</td><td>Qaisar Hasan / Meredith Brunette</td><td class="gs">1&ndash;11</td><td>Rodney Benson / Jenny Tien</td><td class="res">L</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
     </div>
   </section>
 

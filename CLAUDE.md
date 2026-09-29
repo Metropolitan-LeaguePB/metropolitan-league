@@ -23,19 +23,18 @@ Static multi-page website for the Metropolitan League, NYC's first competitive i
 
 | File | URL | Purpose |
 |---|---|---|
-| `index.html` | / | Home — hero, ticker, standings, teams, schedule, sponsors, contact |
+| `index.html` | / | Home — hero, ticker, standings, teams, schedule, contact |
 | `about.html` | /about | League background, mission, borough map |
 | `rules.html` | /rules | Match format & rules |
-| `sponsor.html` | /sponsor | Sponsorship tiers and contact |
 | `allblacks.html` | /allblacks | HKPC All Blacks club page |
 
-All five pages share the same sticky nav bar. When adding or renaming a nav link, update it in **all five files**.
+All four pages share the same sticky nav bar. When adding or renaming a nav link, update it in **all four files**.
 
 ---
 
 ## Nav structure (all pages)
 ```
-Home | About | Format & Rules | Teams | All Blacks | Sponsor | [Join CTA]
+Home | About | Format & Rules | Teams | All Blacks | [Join CTA]
 ```
 - Nav is a single line of HTML inside `<nav class="links" id="nav">` near the top of each file
 - Mobile: collapses behind `.menu-btn` hamburger, toggled with `classList.toggle('open')`
